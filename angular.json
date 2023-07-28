@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "LIBBER": {
+    "libber": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,12 +13,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/LIBBER",
+            "outputPath": "dist/libber",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "LIBBER:build"
+            "browserTarget": "libber:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "LIBBER:build:production"
+              "browserTarget": "libber:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "LIBBER:build"
+            "browserTarget": "libber:build"
           }
         },
         "test": {
@@ -106,15 +106,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "LIBBER:serve"
+            "devServerTarget": "libber:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "LIBBER:serve:production"
+              "devServerTarget": "libber:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "LIBBER"
+  // "defaultProject": "libber",
+  "cli": {
+    "analytics": false
+  }
 }
